@@ -1,6 +1,6 @@
 -- |
--- Module      : Main
--- Description :
+-- Module      : Snake.Interactive
+-- Description : Convenience module for exploring the project in GHCi
 -- Copyright   : (c) Jonatan H Sundqvist, 2016
 -- License     : MIT
 -- Maintainer  : Jonatan H Sundqvist
@@ -8,7 +8,7 @@
 -- Portability : POSIX (not sure)
 --
 
--- Created January 2 2016
+-- Created January 6 2016
 
 -- TODO | -
 --        -
@@ -28,21 +28,28 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- API
 --------------------------------------------------------------------------------------------------------------------------------------------
-module Main where
+module Snake.Interactive where
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- We'll need these
 --------------------------------------------------------------------------------------------------------------------------------------------
-import           Snake.Core
-import qualified Snake.Render as Render
+import Cartesian.Plane
+import Cartesian.Plane.Types
+
+import Cartesian.Space
+import Cartesian.Space.Types
+
+import Control.Lens ((^.))
+
+import Snake.Types
+import Snake.Lenses
+import Snake.Core
+import Snake.Render
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
--- Entry point
+-- Functions
 --------------------------------------------------------------------------------------------------------------------------------------------
--- |
-main :: IO ()
-main = Render.main

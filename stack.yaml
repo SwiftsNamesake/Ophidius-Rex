@@ -1,5 +1,24 @@
-extra-deps: []
+extra-deps:
+- gtk3-0.14.2
+- GLFW-b-1.4.7.3
+- GLUtil-0.8.8
+- OpenGL-2.13.2.1
+- OpenGLRaw-2.6.1.1
+- GLURaw-1.5.0.3
+- ObjectName-1.1.0.1
+- WaveFront-0.1.0.2
+- bindings-GLFW-3.1.1.4
+- hpp-0.3.0.0
+- Michelangelo-0.2.3.0
 resolver: lts-3.16
 flags: {}
 packages:
 - '.'
+- location: C:/Users/Jonatan/Desktop/Haskell/modules/Cartesian
+- location:
+    git: https://github.com/SwiftsNamesake/Michelangelo.git
+    commit: 0356417ac08244986b945fecb6e8b8471b5f2dc2
+
+# - location:
+#     git: https://github.com/gtk2hs/gtk2hs.git
+#     commit: dff5deae25a3f2c7d63ae583d1096b626bb6a9d2

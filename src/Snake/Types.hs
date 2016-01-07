@@ -1,5 +1,5 @@
 -- |
--- Module      : Main
+-- Module      : Snake.Types
 -- Description :
 -- Copyright   : (c) Jonatan H Sundqvist, 2016
 -- License     : MIT
@@ -8,7 +8,7 @@
 -- Portability : POSIX (not sure)
 --
 
--- Created January 2 2016
+-- Created January 3 2016
 
 -- TODO | -
 --        -
@@ -24,25 +24,43 @@
 
 
 
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- API
 --------------------------------------------------------------------------------------------------------------------------------------------
-module Main where
+module Snake.Types where
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- We'll need these
 --------------------------------------------------------------------------------------------------------------------------------------------
-import           Snake.Core
-import qualified Snake.Render as Render
+import qualified Data.Set as S
+
+import qualified Graphics.UI.GLFW as GLFW
+
+import Cartesian.Plane.Types
 
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
--- Entry point
+-- Types
 --------------------------------------------------------------------------------------------------------------------------------------------
+
 -- |
-main :: IO ()
-main = Render.main
+data Mouse f = Mouse { _position :: Vector2D f, _buttons :: S.Set GLFW.MouseButton }
+
+
+-- |
+data Game = Game { _mouse :: Mouse Double, _keyboard :: S.Set GLFW.Key, _snake :: Snake Double }
+
+
+-- |
+data Snake f = Snake { _body :: [Vector2D f], _velocity :: Vector2D f }
+
+
+-- |
+data Settings = Settings {}
+
+
+-- |
+data Camera f = Camera {}
